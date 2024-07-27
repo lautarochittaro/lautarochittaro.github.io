@@ -1,1 +1,60 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+       
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .profile {
+            margin-right: 20px;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .header-content {
+            text-align: left;
+        }
+        .description {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <div class="header-container">
+        <div class="profile">
+            <img src="assets/myphoto.png" alt="Profile Picture">
+        </div>
+        <div class="header-content">
+            <header>
+                <h1>Lautaro Chittaro</h1>
+            </header>
+            <div class="description">
+                <p>I am a Macro/IO Econ Ph.D. student.<br>
+                    Interests: firms, credit, and international economics.</p>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
