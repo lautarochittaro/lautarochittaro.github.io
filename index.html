@@ -31,6 +31,26 @@
             width: 150px;
             height: 150px;
         }
+        .research-section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .research-item {
+            margin-bottom: 30px;
+        }
+        .research-item h3 {
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .research-item ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .research-item li {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -45,17 +65,25 @@
             </header>
             <div class="description">
                 <p>I am a Macro/IO Econ Ph.D. student.<br></p>
-                <p> Interested in firms, credit, and international economics.</p>
+                <p> Interested in firms, finance, and international economics.</p>
                     &#128233 chittaro [at] stanford [dot] edu
             </div>
         </div>
     </div>
+
+    <div id="research-placeholder"></div>
 
     <script>
         fetch('nav.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('nav-placeholder').innerHTML = data;
+            });
+
+        fetch('research.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('research-placeholder').innerHTML = data;
             });
     </script>
 </body>
