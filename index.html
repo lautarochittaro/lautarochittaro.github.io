@@ -12,16 +12,31 @@
        
         .header-container {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .profile {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .header-content {
+                text-align: center;
+            }
         }
         .profile {
             margin-right: 20px;
         }
         .profile img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
+            border-radius: 0 !important;
+            width: 220px !important;
+            height: auto !important;
+            max-width: 100% !important;
         }
         .header-content {
             text-align: left;
@@ -41,6 +56,14 @@
             color: #333;
             border-bottom: 1px solid #eee;
             padding-bottom: 5px;
+        }
+        .paper-title {
+            color: #C41E3A !important;
+            font-weight: normal !important;
+        }
+        .paper-title a {
+            color: #C41E3A !important;
+            text-decoration: underline !important;
         }
         .research-item ul {
             list-style-type: none;
@@ -86,19 +109,21 @@
     <div class="content">
         <div class="header-container">
             <div class="profile">
-                <img src="assets/myphoto.png" alt="Profile Picture" style="border: 2px solid lightgray;">
+                <img src="assets/myphoto.jpg" alt="Profile Picture" style="border: 2px solid lightgray;">
             </div>
             <div class="header-content">
                 <header>
                     <h1 class="name-title">Lautaro Chittaro</h1>
                 </header>
                 <div class="description">
-                    <p>I am a Ph.D. candidate in Economics at Stanford University, specializing in Macro, IO and Finance. My primary research focuses on firms and credit markets, particularly during crisis times.<br></p>
-                    <p>&#128233; <a href="mailto:chittaro@stanford.edu">chittaro@stanford.edu</a> </p>
-                    <p>Committee members:
-                    <a href="mailto:schneidr@stanford.edu">Martin Schneider</a>,
-                    <a href="mailto:piazzesi@stanford.edu">Monika Piazzesi</a>,
-                    <a href="mailto:svass@stanford.edu">Shoshana Vasserman</a></p>
+                    <p>I am a Ph.D. candidate in Economics at Stanford University. I specialize in Macro, IO, and Finance.</p>
+                    <p>My primary research focuses on firms and credit markets, especially during crises.</p>
+                    <p>You can reach me at <a href="mailto:chittaro@stanford.edu" style="color: #C41E3A; text-decoration: underline;">chittaro@stanford.edu </a></p>
+                    <p><strong>Committee members</strong><br>
+                    Martin Schneider: <a href="mailto:schneidr@stanford.edu" style="color: #C41E3A; text-decoration: underline;">schneidr@stanford.edu</a><br>
+                    Monika Piazzesi: <a href="mailto:piazzesi@stanford.edu" style="color: #C41E3A; text-decoration: underline;">piazzesi@stanford.edu</a><br>
+                    Shoshana Vasserman: <a href="mailto:svass@stanford.edu" style="color: #C41E3A; text-decoration: underline;">svass@stanford.edu</a>
+                </p>
                 </div>
             </div>
         </div>
