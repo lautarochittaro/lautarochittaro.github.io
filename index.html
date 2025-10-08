@@ -14,40 +14,86 @@
             display: flex;
             align-items: flex-start;
             margin-bottom: 20px;
+            gap: 20px;
         }
-        @media (max-width: 768px) {
+        
+        /* Wide screens - picture on the side */
+        @media (min-width: 769px) {
+            .header-container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .profile {
+                flex-shrink: 0;
+                margin-right: 0;
+            }
+            .profile img {
+                border-radius: 0 !important;
+                width: 280px !important;
+                height: auto !important;
+                max-width: 100% !important;
+            }
+            .header-content {
+                text-align: left;
+                flex: 1;
+            }
+        }
+        
+        /* Medium screens - picture on the side but smaller */
+        @media (max-width: 768px) and (min-width: 481px) {
+            .header-container {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .profile {
+                flex-shrink: 0;
+                margin-right: 0;
+            }
+            .profile img {
+                border-radius: 0 !important;
+                width: 220px !important;
+                height: auto !important;
+                max-width: 100% !important;
+            }
+            .header-content {
+                text-align: left;
+                flex: 1;
+            }
+        }
+        
+        /* Narrow screens - picture on top */
+        @media (max-width: 480px) {
             .header-container {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+                gap: 15px;
             }
             .profile {
                 margin-right: 0;
-                margin-bottom: 20px;
+                margin-bottom: 0;
+            }
+            .profile img {
+                border-radius: 0 !important;
+                width: 250px !important;
+                height: auto !important;
+                max-width: 100% !important;
             }
             .header-content {
                 text-align: center;
+                width: 100%;
             }
-        }
-        .profile {
-            margin-right: 20px;
-        }
-        .profile img {
-            border-radius: 0 !important;
-            width: 220px !important;
-            height: auto !important;
-            max-width: 100% !important;
-        }
-        .header-content {
-            text-align: left;
         }
         .description {
             margin-top: 10px;
         }
         .research-section {
-            max-width: 800px;
             margin: 40px 0;
-            padding: 0 20px;
+            text-align: left !important;
+        }
+        .research-section h2 {
+            text-align: left !important;
         }
         .research-item {
             margin-bottom: 30px;
@@ -56,6 +102,7 @@
             color: #333;
             border-bottom: 1px solid #eee;
             padding-bottom: 5px;
+            text-align: left !important;
         }
         .paper-title {
             color: #C41E3A !important;
@@ -71,14 +118,13 @@
         }
         .research-item li {
             margin-bottom: 20px;
+            background: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            padding: 0 !important;
         }
         .references-section {
-            background: #f8f9fa;
-            border-left: 4px solid #C41E3A;
-            padding: 20px;
             margin: 30px 0;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .references-section h3 {
             color: #C41E3A;
@@ -88,10 +134,6 @@
         }
         .advisor-item {
             margin-bottom: 15px;
-            padding: 10px;
-            background: white;
-            border-radius: 3px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         .advisor-name {
             font-weight: bold;
