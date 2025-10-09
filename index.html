@@ -9,7 +9,10 @@
     <meta name="keywords" content="Lautaro Chittaro, Economics, PhD, Stanford, Macroeconomics, Finance, Credit, Banking, Industrial Organization, SME, Crisis">
     <link rel="stylesheet" href="css/style.css">
     <style>
-       
+        :root {
+            --red-main: #C41E3A;
+        }
+
         .header-container {
             display: flex;
             align-items: flex-start;
@@ -117,11 +120,11 @@
             text-align: left !important;
         }
         .paper-title {
-            color: #C41E3A !important;
+            color: var(--red-main) !important;
             font-weight: normal !important;
         }
         .paper-title a {
-            color: #C41E3A !important;
+            color: var(--red-main) !important;
             text-decoration: underline !important;
         }
         .research-item ul {
@@ -139,7 +142,7 @@
             margin: 30px 0;
         }
         .references-section h3 {
-            color: #C41E3A;
+            color: var(--red-main);
             margin-top: 0;
             margin-bottom: 15px;
             font-size: 1.3em;
@@ -155,6 +158,11 @@
         .advisor-email {
             color: #666;
             font-size: 0.95em;
+        }
+        /* Utility Class for Red Text/Links */
+        .red-link, a.red-link {
+            color: var(--red-main) !important;
+            text-decoration: underline !important;
         }
     </style>
 </head>
@@ -173,12 +181,12 @@
                 <div class="description">
                     <p>I am a Ph.D. candidate in Economics at Stanford University. I specialize in Macro, IO, and Finance.</p>
                     <p>My primary research focuses on firms and credit markets, especially during crises. </p>
-                    <p>Here is my <a href="assets/cv/CV_20aug2025.pdf" style="color: #C41E3A; text-decoration: underline;">CV</a></p>
-                    <p>You can reach me at <a href="mailto:chittaro@stanford.edu" style="color: #C41E3A; text-decoration: underline;">chittaro@stanford.edu </a></p>
+                    <p>Here is my <a href="assets/cv/CV_20aug2025.pdf" class="red-link">CV</a></p>
+                    <p>You can reach me at <a href="mailto:chittaro@stanford.edu" class="red-link">chittaro@stanford.edu</a></p>
                     <p><strong>Committee members</strong><br>
-                    Martin Schneider: <a href="mailto:schneidr@stanford.edu" style="color: #C41E3A; text-decoration: underline;">schneidr@stanford.edu</a><br>
-                    Monika Piazzesi: <a href="mailto:piazzesi@stanford.edu" style="color: #C41E3A; text-decoration: underline;">piazzesi@stanford.edu</a><br>
-                    Shoshana Vasserman: <a href="mailto:svass@stanford.edu" style="color: #C41E3A; text-decoration: underline;">svass@stanford.edu</a>
+                    Martin Schneider: <a href="mailto:schneidr@stanford.edu" class="red-link">schneidr@stanford.edu</a><br>
+                    Monika Piazzesi: <a href="mailto:piazzesi@stanford.edu" class="red-link">piazzesi@stanford.edu</a><br>
+                    Shoshana Vasserman: <a href="mailto:svass@stanford.edu" class="red-link">svass@stanford.edu</a>
                 </p>
                 </div>
             </div>
@@ -188,7 +196,7 @@
         <div class="research-section">
             <!-- <h2>Research</h2>-->
             <div class="research-item">
-                <h3>Job Market Paper</h3>
+                <h3 style="color: var(--red-main);">Job Market Paper</h3>
                 <ul>
                     <li>
                         <strong class="paper-title"><a href="#">Selection in crisis lending: evidence from Chile</a></strong><br>
