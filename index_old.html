@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="qZmI-1e6A_WE0onwZDnQNq4NKFn-CMthOecWNVIrbyw" />
+    <title>Lautaro Chittaro – Economist</title>
+    <meta name="description" content="Personal website of Lautaro Chittaro, PhD student in Economics at Stanford University. JMP on SME lending and financial crises.">
+    <meta name="keywords" content="Lautaro Chittaro, Economics, PhD, Stanford, Macroeconomics, Finance, Credit, Banking, Industrial Organization, SME, Crisis">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+       
+        .header-container {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+        
+        /* Wide screens - picture on the side */
+        @media (min-width: 769px) {
+            .header-container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .profile {
+                flex-shrink: 0;
+                margin-right: 0;
+            }
+            .profile img {
+                border-radius: 0 !important;
+                width: 280px !important;
+                height: auto !important;
+                max-width: 100% !important;
+            }
+            .header-content {
+                text-align: left;
+                flex: 1;
+            }
+        }
+        
+        /* Medium screens - picture on the side but smaller */
+        @media (max-width: 768px) and (min-width: 481px) {
+            .header-container {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .profile {
+                flex-shrink: 0;
+                margin-right: 0;
+            }
+            .profile img {
+                border-radius: 0 !important;
+                width: 220px !important;
+                height: auto !important;
+                max-width: 100% !important;
+            }
+            .header-content {
+                text-align: left;
+                flex: 1;
+            }
+        }
+        
+        /* Narrow screens - picture on top */
+        @media (max-width: 480px) {
+            .header-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 15px;
+            }
+            .profile {
+                margin-right: 0;
+                margin-bottom: 0;
+            }
+            .profile img {
+                border-radius: 0 !important;
+                width: 250px !important;
+                height: auto !important;
+                max-width: 100% !important;
+            }
+            .header-content {
+                text-align: center;
+                width: 100%;
+            }
+        }
+        .description {
+            margin-top: 10px;
+        }
+        .research-section {
+            margin: 40px 0;
+            text-align: left !important;
+        }
+        .research-section h2 {
+            text-align: left !important;
+        }
+        .research-item {
+            margin-bottom: 30px;
+        }
+        .research-item h3 {
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            text-align: left !important;
+        }
+        .paper-title {
+            color: #C41E3A !important;
+            font-weight: normal !important;
+        }
+        .paper-title a {
+            color: #C41E3A !important;
+            text-decoration: underline !important;
+        }
+        .research-item ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .research-item li {
+            margin-bottom: 20px;
+            background: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+        .references-section {
+            margin: 30px 0;
+        }
+        .references-section h3 {
+            color: #C41E3A;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .advisor-item {
+            margin-bottom: 15px;
+        }
+        .advisor-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .advisor-email {
+            color: #666;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="nav-placeholder"></div> -->
+    <div class="content">
+        <div class="header-container">
+            <div class="profile">
+                <img src="assets/myphoto.jpg" alt="Profile Picture" style="border: 2px solid lightgray;">
+                <p style="color: #666; font-size: 0.8em; margin: 5px 0 0 0; text-align: center;">Photo by Vanessa Coleman</p>
+            </div>
+            <div class="header-content">
+                <header>
+                    <h1 class="name-title">Lautaro Chittaro</h1>
+                </header>
+                <div class="description">
+                    <p>I am a Ph.D. candidate in Economics at Stanford University. I specialize in Macro, IO, and Finance.</p>
+                    <p>My primary research focuses on firms and credit markets, especially during crises.</p>
+                    <p>You can reach me at <a href="mailto:chittaro@stanford.edu" style="color: #C41E3A; text-decoration: underline;">chittaro@stanford.edu </a></p>
+                    <p><strong>Committee members</strong><br>
+                    Martin Schneider: <a href="mailto:schneidr@stanford.edu" style="color: #C41E3A; text-decoration: underline;">schneidr@stanford.edu</a><br>
+                    Monika Piazzesi: <a href="mailto:piazzesi@stanford.edu" style="color: #C41E3A; text-decoration: underline;">piazzesi@stanford.edu</a><br>
+                    Shoshana Vasserman: <a href="mailto:svass@stanford.edu" style="color: #C41E3A; text-decoration: underline;">svass@stanford.edu</a>
+                </p>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div id="research-placeholder"></div>
+    </div>
+
+    <!-- <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+    </script> -->
+
+    <script>
+        fetch('research.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('research-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
