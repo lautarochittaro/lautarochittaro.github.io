@@ -1,0 +1,258 @@
+%==============================================================================
+%  Lautaro Chittaro — Curriculum Vitae
+%  Title-based layout (centered header + ruled section headings)
+%==============================================================================
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{newtxtext}           % Times-like serif for the body
+\usepackage{newtxmath}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
+
+% ---- Colours ----------------------------------------------------------------
+\definecolor{bocconiblue}{HTML}{0047AB} % cobalt-blue accent for links
+\definecolor{rulegray}{HTML}{9A9A9A}    % soft gray for section rules
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=bocconiblue,
+  linkcolor=bocconiblue,
+  citecolor=bocconiblue,
+  pdftitle={Lautaro Chittaro - Curriculum Vitae},
+  pdfauthor={Lautaro Chittaro}
+}
+
+\setlength{\parindent}{0pt}
+\linespread{1.04}
+
+% ---- Avoid widow / orphan lines ---------------------------------------------
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\raggedbottom
+
+% ---- Unified left column ----------------------------------------------------
+% Every section body is indented to \bodyindent; years live in the gutter to
+% the left of it, so all body text lines up in a single vertical column while
+% headings and rules stay flush with the page margin.
+\newlength{\bodyindent}\setlength{\bodyindent}{1.65cm}
+\newlength{\bodywidth}\setlength{\bodywidth}{\dimexpr\textwidth-\bodyindent\relax}
+
+% ---- Ruled section heading (flush left, full width) -------------------------
+\newcommand{\cvsec}[1]{%
+  \par
+  \vspace{1.05em}%
+  {\scshape\large #1}\par
+  \vspace{0.15em}%
+  {\color{rulegray}\hrule height 0.3pt}%
+  \vspace{0.6em}%
+}
+
+% ---- Dated entry: content flush left, year right-aligned (wraps safely) -----
+\newcommand{\yr}[2]{%
+  \par\noindent
+  \begin{tabularx}{\textwidth}{@{}X@{\hspace{1.5em}}r@{}}
+    #2 & {\small #1}
+  \end{tabularx}\par}
+% Year-first variant (for list-style sections such as seminars).
+\newcommand{\yrleft}[2]{%
+  \par\noindent
+  {\small #1}\hspace{0.6em}#2\par}
+
+% ---- Building blocks --------------------------------------------------------
+% Plain (non-link) title: bold black, no colour.
+\newcommand{\entrytitle}[1]{{\bfseries #1}}
+% Linked title: bold + accent colour, wraps a real hyperlink.
+\newcommand{\entrytitlelink}[2]{\href{#1}{\bfseries\color{bocconiblue} #2}}
+\newcommand{\coauthors}[1]{{\normalfont #1}\par}
+\newcommand{\abstractpar}[1]{\par\vspace{0.25em}{\small #1\par}}
+
+\begin{document}
+\pagestyle{empty}
+
+% ---- Centered header --------------------------------------------------------
+\begin{center}
+  {\LARGE\scshape Lautaro Chittaro}\\[0.5em]
+  Department of Finance, Bocconi University\\
+  Via Roentgen 1, 20136, Milan, Italy\\[0.35em]
+  \href{mailto:lautaro.chittaro@unibocconi.it}{lautaro.chittaro@unibocconi.it} \quad
+  \href{https://lautarochittaro.github.io}{lautarochittaro.github.io}
+\end{center}
+
+% ---- Academic Positions -----------------------------------------------------
+\cvsec{Academic Positions}
+\yr{2026}{Assistant Professor of Finance, Bocconi University}
+
+% ---- Education --------------------------------------------------------------
+\cvsec{Education}
+\yr{2026}{Ph.D. in Economics, Stanford University}
+\yr{2016}{M.A. in Economics, Universidad de San Andr\'es}
+\yr{2015}{B.A. in Economics, Universidad de Buenos Aires}
+
+% ---- References (hidden) ----------------------------------------------------
+% \cvsec{References}
+% \noindent
+% \begin{minipage}[t]{0.5\bodywidth}
+%   \textbf{Monika Piazzesi} (co-primary advisor)\\
+%   Dept.\ of Economics, Stanford University\\
+%   \href{mailto:piazzesi@stanford.edu}{piazzesi@stanford.edu}
+% \end{minipage}%
+% \begin{minipage}[t]{0.5\bodywidth}
+%   \textbf{Martin Schneider} (co-primary advisor)\\
+%   Dept.\ of Economics, Stanford University\\
+%   \href{mailto:schneidr@stanford.edu}{schneidr@stanford.edu}
+% \end{minipage}
+%
+% \vspace{0.7em}
+% \textbf{Shoshana Vasserman}\\
+% Grad.\ Sc.\ of Business, Stanford University\\
+% \href{mailto:svass@stanford.edu}{svass@stanford.edu}
+
+% ---- Fields -----------------------------------------------------------------
+\cvsec{Fields}
+Financial Economics, Macroeconomics, Industrial Organization
+
+% ---- Working Papers (includes the Job Market Paper) -------------------------
+\cvsec{Working Papers}
+\entrytitlelink{https://lautarochittaro.github.io/assets/papers/Chittaro-JMP.pdf}{Selection in Crisis Lending: Evidence from Chile's Government-Guaranteed Loans}\par
+\coauthors{with Crist\'ian S\'anchez}
+\abstractpar{We study the long-run effectiveness of government-guaranteed loan programs
+implemented during recent crises. Using administrative and loan application data from the
+Central Bank of Chile, we track firm defaults five years after the COVID-19 shock. Our
+instrumental-variable estimates show that these loans postponed defaults for two years but did
+not reduce total defaults in the long run. Banks used private information to direct credit
+toward firms that would have been safer even without the program. To assess the welfare
+implications of the delayed defaults and banks' selection of safer firms, we build a dynamic
+model of heterogeneous entrepreneurs disciplined by our causal estimates. The program generated
+welfare gains 21\% above its fiscal cost, with limited rents for banks and modest increases in
+aggregate risk-taking. Younger firms are the most cost-effective group to support, yet they are
+the least likely to be approved because their growth relies on leverage, increasing default
+risk. A budget-neutral redesign that raises guarantees for younger firms and reduces them for
+the rest could increase welfare by 6pp.}
+
+\vspace{0.7em}
+\entrytitlelink{https://office365stanford-my.sharepoint.com/:b:/g/personal/chittaro_stanford_edu/EVvnhDn6dbZGk3inqLAbdsMBBV_AK1OOnfWAP_kEyaT6FQ?e=4hMK6z}{Asset Returns as Carbon Taxes}\par
+\coauthors{with Monika Piazzesi, Martin Schneider and Marcelo Sena}
+\abstractpar{In frictionless financial markets, a carbon tax on energy users provides the same
+incentives as a \textit{replicating return schedule} that depends on firms' emission
+intensities, defined as scope 1 emissions relative to enterprise value. We use this result to
+interpret pollution premia measured by recent empirical studies and conclude that markets
+currently provide only modest incentives. Replicating a serious carbon tax requires high returns
+in the right tail of the emission intensity distribution. With heterogeneous investors, such
+returns are not sustainable unless essentially everyone perceives large nonpecuniary costs from
+holding dirty capital. Substantial emission reductions can be achieved, however, when even a
+small share of investors perceive nonpecuniary \textit{benefits} from owning clean electricity
+capital.}
+
+\vspace{0.7em}
+\entrytitlelink{https://marcelosena.github.io/marcelosenajmp.pdf}{Pricing and Risk in Sovereign Green Debt: Evidence from Chile}\par
+\coauthors{with Marcelo Sena}
+\abstractpar{We study the pricing of sovereign green bonds using Chile's pioneering green bond
+program and its cross-design issuance. Employing a panel of Chilean U.S.-dollar bonds, we
+estimate no-arbitrage pricing kernels for green and conventional bonds. The results reveal a
+declining greenium across maturities, driven by the higher interest-rate risk exposure of green
+bonds. We find no evidence of investor segmentation or liquidity differences between green and
+conventional bonds. Instead, we explain the observed pricing patterns through a
+representative-agent asset-pricing model in which investors derive nonpecuniary benefits from the
+real value of their green bond holdings. During high-inflation periods, as observed in our
+sample, the real value of green bond portfolios deteriorates, making the convenience service
+they provide scarcer and more valuable. This positive correlation between green convenience yield
+and inflation generates a risk premium that compresses the greenium especially at longer
+maturities, producing a downward-sloping greenium term structure.}
+
+% ---- Work in Progress -------------------------------------------------------
+\cvsec{Work in Progress}
+\entrytitle{The Cost of Port Disruptions: Evidence from U.S. Containerized Trade}\par
+\coauthors{with Stephen Redding, Janet Stefanov, and Shoshana Vasserman}
+\abstractpar{How costly are disruptions to activity at U.S. ports? To answer this question, we
+estimate a model of demand for importers of different types of products who choose which maritime
+port (if any) to use for their container imports. Our estimator leverages a nearly comprehensive
+panel of maritime imports to the U.S. between 2020 and 2025, linking customs records, granular
+GPS pings from container-shipping fleets, origin-destination-level shipping prices, and a number
+of additional data sources. Using variation in prices and processing times from localized
+slowdowns and disruptions at different ports, our model rationalizes importers' port choices as a
+function of daily origin-destination prices, travel time at sea and on land, port congestion, and
+sticky product-origin-destination preferences at the time of each shipment's observed departure.
+Our estimates allow us to predict the economic incidence of a short-term disruption at a subset of
+ports, such as a general strike. We use this to discuss the potential of different policies to
+support supply chain resilience.}
+
+% ---- Academic Publications --------------------------------------------------
+\cvsec{Pre-PhD Publications}
+\entrytitlelink{https://latinaer.org/index.php/laer/article/view/38}{From Bad to Worse: the
+Economic Impact of COVID-19 in Developing Countries. Evidence from Venezuela}\par
+\coauthors{with Germ\'an Caruso, Mar\'ia Emilia Cucagna, Luis Pedro Espa\~na}
+\textit{Latin American Economic Review}, 2021\par
+\abstractpar{Policy responses to COVID-19 affected the dynamic of economic growth and labor
+markets worldwide, hitting economically harder on developing countries. These policies involved
+economic lockdowns that included the shutdown of the main statistical exercises, making it almost
+impossible to assess the breadth and variety of their effects. Using a phone survey, this paper
+examines the impact of the quarantine implemented in Venezuela on labor market outcomes. The
+identification strategy exploits the exogenous variation in the severity of the lockdown in
+different regions of the country. The main result indicates a 16.5 percentage points reduction in
+employment, while in regions with severe lockdowns the reduction has been 13.8 p.p.\ larger. In
+particular, the self-employed and informally employed were hard hit by the lockdown. To cope with
+this effect, households sold their productive assets, reduced their savings, sought for
+alternative income sources and looked for help from relatives. This paper does not find a
+differential effect on the number of COVID-19 cases in more severe lockdown settings. Results are
+robust to endogenous migration and alternative specifications.}
+
+% ---- Conferences and Seminars -----------------------------------------------
+\cvsec{Conferences and Seminars}
+\yrleft{2026}{ITAM, PUC-Rio, FGV EPGE, Universidad de los Andes, University of Miami,
+  Boston College, Bocconi University, CEMFI, Universidad de Chile, EEA-ESEM,
+  Universidad de Buenos Aires, Universidad Torcuato Di Tella, Banco Central de Chile}
+
+% ---- Other Positions --------------------------------------------------------
+\cvsec{Other Positions}
+\yr{2022-25}{Department of Economics, Stanford University}
+Research Assistant for Martin Schneider and Monika Piazzesi\par
+\vspace{0.4em}
+\yr{2022-25}{Graduate School of Business, Stanford University}
+Research Assistant for Shoshana Vasserman\par
+\vspace{0.4em}
+\yr{2020}{World Bank, Washington DC}
+Short-term Consultant\par
+\vspace{0.4em}
+\yr{2017-20}{Ministry of Production, Argentina}
+Trade Policy Advisor\par
+
+% ---- Teaching ---------------------------------------------------------------
+\cvsec{Teaching}
+Macroeconomics II (Ph.D.), Stanford University\\
+Economic Forecasting (Undergrad), Stanford University\\
+Macroeconomics I, II (Undergrad), Universidad de Buenos Aires\\
+Industrial Organization (Undergrad), Universidad de Buenos Aires\\
+National Accounts (Undergrad), Universidad de Buenos Aires
+
+% ---- Awards & Fellowships ---------------------------------------------------
+\cvsec{Awards \& Fellowships}
+\yr{2024}{Gale and Steve Kohlhagen Fellowship, Stanford University}
+\yr{2020-22}{The Alejandro and Lida Zaffaroni Fellowship, Stanford University}
+
+% ---- Internships & Workshops ------------------------------------------------
+\cvsec{Internships \& Workshops}
+\yr{2024}{Central Bank of Chile --- Visiting Program}
+\yr{2024}{Central Bank of Mexico --- Summer Internship Program}
+\yr{2022}{Princeton University --- Macro, Money and Finance --- Continuous Time
+  Methods Workshop}
+
+% ---- Other Publications -----------------------------------------------------
+\cvsec{Other Publications}
+\entrytitlelink{https://ri.conicet.gov.ar/handle/11336/178261}{International Integration and Productive Development: New Policy Guidelines}, 2018\\
+with Juan Carlos Hallak --- \textit{Bolet\'in Techint} 356 (in Spanish)
+\vspace{0.4em}
+
+\entrytitlelink{https://repositorio.udesa.edu.ar/jspui/handle/10908/17721}{Exports, Bank Credit, and Repayment Capacity of SMEs in Argentina (2007--2016)}, 2020\\
+Master thesis, Universidad de San Andr\'es
+
+% ---- Language ---------------------------------------------------------------
+\cvsec{Language}
+English (professional), Spanish (native), Italian (beginner)
+
+\end{document}
