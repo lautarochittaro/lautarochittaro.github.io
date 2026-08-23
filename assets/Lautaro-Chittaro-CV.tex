@@ -14,6 +14,18 @@
 \usepackage{tabularx}
 \usepackage[hidelinks]{hyperref}
 
+% Minimal \needspace: force a page break if less than #1 vertical space remains,
+% so a heading/title is never stranded at the foot of a page (needspace.sty is
+% not installed in this TeX tree).
+\makeatletter
+\newcommand{\needspace}[1]{%
+  \begingroup
+    \setlength{\dimen@}{#1}%
+    \dimen@ii=\pagegoal \advance\dimen@ii-\pagetotal
+    \ifdim\dimen@>\dimen@ii \newpage \fi
+  \endgroup}
+\makeatother
+
 % ---- Colours ----------------------------------------------------------------
 \definecolor{bocconiblue}{HTML}{0047AB} % cobalt-blue accent for links
 \definecolor{rulegray}{HTML}{9A9A9A}    % soft gray for section rules
@@ -65,10 +77,11 @@
   {\small #1}\hspace{0.6em}#2\par}
 
 % ---- Building blocks --------------------------------------------------------
-% Plain (non-link) title: bold black, no colour.
-\newcommand{\entrytitle}[1]{{\bfseries #1}}
+% Plain (non-link) title: bold black. \needspace keeps the title from being
+% stranded alone at the foot of a page (it moves down with its abstract).
+\newcommand{\entrytitle}[1]{\needspace{5\baselineskip}{\bfseries #1}}
 % Linked title: bold + accent colour, wraps a real hyperlink.
-\newcommand{\entrytitlelink}[2]{\href{#1}{\bfseries\color{bocconiblue} #2}}
+\newcommand{\entrytitlelink}[2]{\needspace{5\baselineskip}\href{#1}{\bfseries\color{bocconiblue} #2}}
 \newcommand{\coauthors}[1]{{\normalfont #1}\par}
 \newcommand{\abstractpar}[1]{\par\vspace{0.25em}{\small #1\par}}
 
